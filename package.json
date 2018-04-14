@@ -1,0 +1,21 @@
+{
+  "name": "wall.io",
+  "version": "0.0.1",
+  "description": "Project management/design tool built to simulate the physical act of designing and managing a project on a wall",
+  "author": "James Miner (immrama87@gmail.com)",
+  "license": "MITNFA",
+  "dependencies": {
+    "angular": "^1.6.9",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "mime-types": "^2.1.18",
+    "popper.js": "^1.14.3",
+    "requirejs": "^2.3.5"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  }
+}

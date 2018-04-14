@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/main.css"/>
+
+    <script type="application/javascript" src="/node_modules/angular/angular.min.js"></script>
+
+    <script type="application/javascript" src="/node_modules/requirejs/require.js"
+      data-main="/wallCanvas/index.js">
+    </script>
+
+    <script type="application/javascript">
+      function checkLoaded(){
+        if(!window.wallCanvas){
+          console.log("No Wall Canvas yet");
+          setTimeout(checkLoaded, 50);
+        }
+        else {
+          doSetup();
+        }
+      }
+
+      function doSetup(){
+        var wall = window.wallCanvas.api.createInstance("wall");
+        var sticky = wall.addSticky(100, 200);
+        var text = window.wallCanvas.api.prepareText("Hello, World!");
+        sticky.setText(text);
+
+        var secondSticky = wall.addSticky(120, 220);
+        var secondText = window.wallCanvas.api.prepareText("FLOAT LIKE A BUTTERFLY, STING LIKE A BEE");
+        secondSticky.setText(secondText);
+        wall.draw();
+      }
+
+      window.onload = checkLoaded;
+    </script>
+  </head>
+
+  <body>
+    <canvas id="wall"></canvas>
+  </body>
+</html>
